@@ -43,6 +43,11 @@ let g:Illuminate_ftHighlightGroups = {
       \ }
 ```
 
+Alternatively, you can define which highlight groups you don't want the illuminating applied:
+```
+let g:Illuminate_ftNohighlightGroups = [
+      \ 'Comment', 'Statement', 'Identifier' ]
+```
 
 illuminate can also be disabled for various filetypes using the following:
 ```

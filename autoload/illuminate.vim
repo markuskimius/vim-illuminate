@@ -85,6 +85,10 @@ fun! s:illuminate(...) abort
        || index(g:Illuminate_ftHighlightGroups[&filetype], synIDattr(synID(line('.'), col('.'), 1), 'name')) >= 0
        call s:match_word(s:get_cur_word())
     endif
+  elseif exists('g:Illuminate_ftNohighlightGroups')
+    if index(g:Illuminate_ftNohighlightGroups, synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')) < 0
+      call s:match_word(s:get_cur_word())
+    endif
   else
     call s:match_word(s:get_cur_word())
   endif
